@@ -1,0 +1,36 @@
+SERVER:
+Switch> en
+Switch# conf t
+---------------Server--------------
+Switch(config)#vtp mode server
+Switch(config)#vtp domain ccna
+Switch(config)#vtp password 123
+
+Switch(config)#vlan 10
+Switch(config-vlan)#name IT
+Switch(config-vlan)#vlan 20
+Switch(config-vlan)#name HR
+Switch(config-vlan)#ex
+Switch(config)#vlan 30
+Switch(config-vlan)#name Management
+Switch(config-vlan)#exit
+Switch(config)#exit
+	
+Switch# show vlan
+
+Switch(config)#interface fa0/1
+Switch(config-if)#switchport mode trunk
+
+----------------TRANSPARENT------------------
+Switch(config)#vtp mode transparent
+  Switch(config)#vtp domain ccna
+    Switch(config)#vtp password 123
+
+-----------------CLIENT-----------------
+Switch(config)#vtp mode client
+Switch(config)#vtp domain ccna
+Switch(config)#vtp password 123
+
+------------Multiple port at a time congiguration-------------
+Switch(config)#int range fa0/1-2
+Switch(config-if-range)#switchport mode trunk
