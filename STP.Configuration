@@ -1,0 +1,10 @@
+Switch> en
+Switch# conf t
+Switch(config)#spanning-tree vlan 1
+Switch(config)#spanning-tree vlan 1 root primary 
+Switch(config)#spanning-tree vlan 1 priority 100
+% Allowed values are:
+  0     4096  8192  12288 16384 20480 24576 28672
+  32768 36864 40960 45056 49152 53248 57344 61440
+Switch(config)#spanning-tree vlan 1 priority 57344
+Switch# show spanning-tree
