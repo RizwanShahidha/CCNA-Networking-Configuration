@@ -1,0 +1,9 @@
+network(config)#vlan 2
+network(config-vlan)#name manager
+network(config-vlan)#exit
+network(config)#interface fa0/2
+network(config-if)#switchport mode access
+network(config-if)#switchport access vlan 2
+network(config-if)#ex
+network(config)#exit
+network#show vlan
